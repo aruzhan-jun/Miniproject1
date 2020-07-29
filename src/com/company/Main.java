@@ -20,6 +20,7 @@ public class Main {
         try {
             socket = new Socket("127.0.0.1", 1984);
             outputStream = new ObjectOutputStream(socket.getOutputStream());
+            inputStream = new ObjectInputStream(socket.getInputStream());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -46,7 +47,6 @@ public class Main {
             if ((pd = (PackageData) inputStream.readObject()) != null) {
                 students = pd.getStudents();
             }
-            System.out.println(students.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

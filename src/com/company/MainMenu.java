@@ -31,7 +31,7 @@ public class MainMenu extends Container {
         list.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                MainFrame.getListStudents().generateTable(Main.listStudents());
+                MainFrame.getListStudents().generateTextArea(Main.listStudents());
                 MainFrame.mainMenu.setVisible(false);
                 MainFrame.listStudents.setVisible(true);
             }
